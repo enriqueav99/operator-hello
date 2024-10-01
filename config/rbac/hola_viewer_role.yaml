@@ -1,0 +1,23 @@
+# permissions for end users to view hola.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-hello
+    app.kubernetes.io/managed-by: kustomize
+  name: hola-viewer-role
+rules:
+- apiGroups:
+  - grupo.enriqueav.com
+  resources:
+  - hola
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - grupo.enriqueav.com
+  resources:
+  - hola/status
+  verbs:
+  - get

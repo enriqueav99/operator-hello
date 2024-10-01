@@ -1,0 +1,9 @@
+apiVersion: grupo.enriqueav.com/v1alpha1
+kind: Hola
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-hello
+    app.kubernetes.io/managed-by: kustomize
+  name: hola-sample
+spec:
+  # TODO(user): Add fields here

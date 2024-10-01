@@ -1,0 +1,27 @@
+# permissions for end users to edit hola.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-hello
+    app.kubernetes.io/managed-by: kustomize
+  name: hola-editor-role
+rules:
+- apiGroups:
+  - grupo.enriqueav.com
+  resources:
+  - hola
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - grupo.enriqueav.com
+  resources:
+  - hola/status
+  verbs:
+  - get
